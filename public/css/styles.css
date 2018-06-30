@@ -19,6 +19,7 @@ h1, h2, h3 {
 
 h1, h2, h3, p {
     margin: 0 0 1rem;
+    text-align: center;
 }
 
 ol, ul {
@@ -31,4 +32,13 @@ a {
 
 .connectivity-status {
     font-weight: 600;
+}
+
+p.online-status {
+    text-align: center;
+}
+
+table#converter-wrapper {
+    width: 50%;
+    margin: auto;
 }
