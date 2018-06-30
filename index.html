@@ -7,6 +7,7 @@
 <title>Currency Converter</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,15 +19,35 @@
 </header>
 
 <main>
-
-    <p>Oh hey. You are <span class="connectivity-status">online</span>.</p>
+    <p class="online-status">Oh hey. You are <span class="connectivity-status">online</span>.</p>
+    <table id="converter-wrapper" class="table">
+        <tr>
+            <td>
+                <select id="country1" class="country1">
+                    <option></option>
+                </select>
+            </td>
+            <td>
+                <select id="country2" class="country2">
+                    <option></option>
+                </select>
+            </td>
+        </tr>
+        <tr colspan="2">
+            <td>
+                <input type="text" class="amount" id="amount">
+            </td>
+        </tr>
+        <tr colspan="2">
+            <td>
+                <button class="btn btn-primary convert-now" id="convert-now">Convert</button>
+            </td>
+        </tr>
+    </table>
 
 </main>
 
-<img src="images/google.png" alt="Google">
-
 <script>
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () =>
         navigator.serviceWorker.register('serviceWorker.js')
