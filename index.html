@@ -20,22 +20,25 @@
 
 <main>
     <p class="online-status">Oh hey. You are <span class="connectivity-status">online</span>.</p>
-    <table id="converter-wrapper" class="table">
+    <table id="converter-wrapper" class="table table table-bordered">
         <tr>
-            <td>
-                <select id="country1" class="country1">
+            <td class="equal-width">
+                <select id="country1" class="form-control">
                     <option></option>
                 </select>
             </td>
-            <td>
-                <select id="country2" class="country2">
+            <td class="equal-width">
+                <select id="country2" class="form-control">
                     <option></option>
                 </select>
             </td>
         </tr>
-        <tr colspan="2">
+        <tr>
             <td>
-                <input type="text" class="amount" id="amount">
+                <input type="text" class="form-control" id="amount" placeholder="Amount to convert">
+            </td>
+            <td>
+                <input type="text" class="form-control" id="converted-amount" disabled>
             </td>
         </tr>
         <tr colspan="2">
