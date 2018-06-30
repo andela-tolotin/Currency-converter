@@ -3,5 +3,8 @@
   "devDependencies": {
     "@neogeek/eslint-config-standards": "1.15.0",
     "eslint": "3.19.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
