@@ -1,10 +1,12 @@
-const cacheName = 'pwa-starter-kit';
+const cacheName = 'pwa-currency-converter';
 const cacheVersion = `${cacheName}::1.0.0`;
 
 const cachedFiles = [
     '/',
     '/css/styles.css',
-    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
+    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
+    'js/idb.js',
+    'js/converter.js'
 ];
 
 const networkFiles = [
