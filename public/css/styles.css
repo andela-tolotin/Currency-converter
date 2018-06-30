@@ -39,6 +39,10 @@ p.online-status {
 }
 
 table#converter-wrapper {
-    width: 50%;
+    width: 40%;
     margin: auto;
+}
+
+td.equal-width {
+    width: 50%;
 }
