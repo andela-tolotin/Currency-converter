@@ -17,5 +17,8 @@
 - head to your browser and type `localhost:3000`
 - Enjoy!
 
+## Github pages repository
+- https://github.com/andela-tolotin/temitope-converter.github.io
+
 ## See for yourself
 - https://andela-tolotin.github.io/temitope-converter.github.io/
