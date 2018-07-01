@@ -4,6 +4,7 @@ class CurrencyConverter {
     this.dbPromise = this.openDb();
     this.fetchCurrency();
     this.loadCurrenciesToSelectDropDown();
+    this.handleConversion();
   }
 
   fetchCurrency() {
@@ -98,6 +99,13 @@ class CurrencyConverter {
         toCountry.appendChild(option2);
       });
     });
+  }
+
+  handleConversion() {
+    document.querySelector('#convert-now')
+      .addEventListener('click', (event) => {
+        alert('YO!');
+      });
   }
 }
 
