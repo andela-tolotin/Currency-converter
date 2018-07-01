@@ -3,7 +3,7 @@ class CurrencyConverter {
     this.registerWorker();
     this.dbPromise = this.openDb();
     this.fetchCurrency();
-    this.getAllCurrencies();
+    this.loadCurrenciesToSelectDropDown();
   }
 
   fetchCurrency() {
@@ -77,6 +77,27 @@ class CurrencyConverter {
         });
       }
     );
+  }
+
+  loadCurrenciesToSelectDropDown() {
+    let fromCountry = document.querySelector('#country1');
+    let toCountry = document.querySelector('#country2');
+
+    this.getAllCurrencies().then(currencies => {
+      currencies.forEach(currency => {
+        let option = document.createElement("option");
+        option.value= currency.id;
+        option.innerHTML = currency.currencyName;
+
+        let option2 = document.createElement("option");
+        option2.value= currency.id;
+        option2.innerHTML = currency.currencyName;
+
+        // then append it to the select element
+        fromCountry.appendChild(option);
+        toCountry.appendChild(option2);
+      });
+    });
   }
 }
 
