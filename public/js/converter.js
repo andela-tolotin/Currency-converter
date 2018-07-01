@@ -3,6 +3,7 @@ class CurrencyConverter {
     this.registerWorker();
     this.dbPromise = this.openDb();
     this.fetchCurrency();
+    this.getAllCurrencies();
   }
 
   fetchCurrency() {
@@ -60,6 +61,22 @@ class CurrencyConverter {
         return cursor.continue().then(deleteRest);
       });
     });
+  }
+
+  getAllCurrencies() {
+    return new Promise((resolve, reject) => {
+        this.dbPromise.then((db) => {
+          if (!db) return;
+          
+          let tx = db.transaction('currencies')
+            .objectStore('currencies')
+            .index('id');
+            tx.getAll().then(currencies => {
+            resolve(currencies);
+          });
+        });
+      }
+    );
   }
 }
 
