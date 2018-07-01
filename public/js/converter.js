@@ -104,8 +104,37 @@ class CurrencyConverter {
   handleConversion() {
     document.querySelector('#convert-now')
       .addEventListener('click', (event) => {
-        alert('YO!');
+        let country1 = document.querySelector('#country1').value;
+        let country2 = document.querySelector('#country2').value;
+        let amount = document.querySelector('#amount').value;
+
+        let fromCurrency = encodeURIComponent(country1);
+        let toCurrency = encodeURIComponent(country2);
+        let query = fromCurrency + '_' + toCurrency;
+
+        if (country1 == 0 || country2 == 0 || amount == '' || amount < 0 ) {
+          return;
+        }
+        // Get the exchange rate 
+        this.getExchangeRate(query).then(result => {
+          let convertedAmount = document.querySelector('#converted-amount');
+          convertedAmount.value = parseInt((result[query] * amount));
+        }).catch(error => {
+          alert(error);
+        });
+    });
+  }
+
+  getExchangeRate(query) {
+    return new Promise((resolve, reject) => {
+      fetch(`https://free.currencyconverterapi.com/api/v5/convert?q=${query}&compact=ultra`)
+      .then((response) => response.json())
+      .then((result) => {
+        resolve(result);
+      }).catch(error => {
+        reject(Error('The exchange rate has not been cachd. Try again when you\'re online'));
       });
+    });
   }
 }
 
