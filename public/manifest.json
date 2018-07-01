@@ -1,6 +1,6 @@
 {
-    "short_name": "PWA App",
-    "name": "Progressive Web Application Starter Kit",
+    "short_name": "PWA for Currency Converter",
+    "name": "Progressive Web Application for Currency Converter",
     "icons": [
         {
             "src": "images/icon@2x.png",
@@ -8,7 +8,6 @@
             "sizes": "512x512"
         }
     ],
-    "start_url": "https://pwa-starter-kit-93cf2.firebaseapp.com/",
     "background_color": "#FFFFFF",
     "theme_color": "#3E82F7",
     "display": "minimal-ui"
