@@ -3,6 +3,7 @@ const cacheVersion = `${cacheName}::1.0.0`;
 
 const cachedFiles = [
   '/',
+  'images/icon@2x.png',
   '/css/styles.css',
   'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
   'js/idb.js',
