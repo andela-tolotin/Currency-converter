@@ -1,15 +1,11 @@
-# Progressive Web Application Starter Kit
+# Progressive Web Application for Currency Converter
 
-[![](https://img.shields.io/badge/Lighthouse%20Report-100%25-brightgreen.svg?style=flat)](https://github.com/GoogleChrome/Lighthouse/)
+## What this app does
 
-## Goals
-
-Provide an easy to read `serviceWorker.js` that does the following:
-
-- [x] Cache a specific set of files.
-- [x] Cache files not included in the `serviceWorker.js` file.
-- [x] Update cached files on page load.
-- [x] Clear out old cache.
-- [x] Return cached files when offline or server is unavailable.
-- [x] Display an online/offline status.
-- [ ] Display a message when the cache updates.
+- Provides offline caching functionality
+- Help you convert form one currency to another
+- If you already converted from one currency to another when online be sure to access the exchange rate even when you're offline
+- Select Amount
+- Choose currency you're converting from
+- and choose the currency you're converting to
+- All you see next is the current value of the amount
