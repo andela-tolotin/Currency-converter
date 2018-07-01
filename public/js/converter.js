@@ -1,7 +1,7 @@
 class CurrencyConverter {
   constructor() {
     this.registerWorker();
-    this.openDb();
+    this.dbPromise = this.openDb();
     this.fetchCurrency();
   }
 
@@ -9,8 +9,9 @@ class CurrencyConverter {
     fetch('https://free.currencyconverterapi.com/api/v5/currencies')
       .then((response) => response.json())
       .then((myJson) => {
-        console.log(myJson);
-      });
+        let currencies = Object.values(myJson.results);
+        this.save(currencies);
+      }).catch(error => console.log(error));
   }
 
   openDb() {
@@ -20,6 +21,8 @@ class CurrencyConverter {
       });
       currency.createIndex('id', 'id');
     });
+
+    return dbPromise;
   }
 
   registerWorker() {
@@ -45,10 +48,9 @@ class CurrencyConverter {
       let tx = db.transaction('currencies', 'readwrite');
       let store = tx.objectStore('currencies');
 
-      currencies.array.forEach(currency => {
-        store.put(currency, currency.id);
-      });
-
+      for (let currency of currencies) {
+        store.put(currency);
+      }
       // limit store to 1600 items
       store.index('id').openCursor(null, "prev").then(cursor => {
         return cursor.advance(160);
