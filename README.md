@@ -9,3 +9,10 @@
 - Choose currency you're converting from
 - and choose the currency you're converting to
 - All you see next is the current value of the amount
+
+## How to run locally
+- Install node if you do not have
+- run `npm install` to install all npm packages
+- run node `server.js` to start the server
+- head to your browser and type `localhost:3000`
+- Enjoy!
